@@ -1,0 +1,45 @@
+#!/bin/bash
+
+
+_repolink () {
+    local regex
+    regex='(https?)://github.com/.+/.+'
+    if [[ $Eiva_REPO == "EivaBot" ]]
+    then
+        echo "aHR0cHM6Ly9naXRodWIuY29tL1RlYW1FaXZhL0VpdmEtVXNlcmJvdC9hcmNoaXZlL21hc3Rlci56aXA=" | base64 -d
+    elif [[ $Eiva_REPO == "Eivabot" ]]
+    then
+        echo "aHR0cHM6Ly9naXRodWIuY29tL1RlYW1FaXZhL0VpdmEtVXNlcmJvdC9hcmNoaXZlL21hc3Rlci56aXA=" | base64 -d
+    elif [[ $Eiva_REPO =~ $regex ]]
+    then
+        if [[ $Eiva_REPO_BRANCH ]]
+        then
+            echo "${Eiva_REPO}/archive/${Eiva_REPO_BRANCH}.zip"
+        else
+            echo "${Eiva_REPO}/archive/master.zip"
+        fi
+    else
+        echo "aHR0cHM6Ly9naXRodWIuY29tL1RlYW1FaXZhL0VpdmEtVXNlcmJvdC9hcmNoaXZlL21hc3Rlci56aXA=" | base64 -d
+    fi
+}
+
+
+start_bot () {
+    local zippath
+    zippath="myEivabot.zip"
+    echo "  Downloading source code ..."
+    wget -q $(_repolink) -O "$zippath"
+    echo "  Unpacking Data ..."
+    EivaPATH=$(zipinfo -1 "$zippath" | grep -v "/.");
+    unzip -qq "$zippath"
+    echo "  Processing Codes..."
+    rm -rf "$zippath"
+    sleep 5
+    cd $EivaPATH
+    echo "  • Starting EivaBot •  "
+
+    python3 ../setup/updater.py ../requirements.txt requirements.txt
+    python3 -m Eivabot
+}
+
+start_bot
