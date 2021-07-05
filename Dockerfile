@@ -1,4 +1,4 @@
-FROM TeamEiva/Eivabot:latest
+FROM teamEiva/Eivabot:latest
 
 #clonning repo 
 RUN git clone https://github.com/TeamEiva/Eiva-Userbot.git /root/Eivabot
