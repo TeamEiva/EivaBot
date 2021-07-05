@@ -1,7 +1,7 @@
 FROM TeamEiva/Eivabot:latest
 
 #clonning repo 
-RUN git clone https://github.com/TeamEiva/Eiva-Userbot.git /root/hellbot
+RUN git clone https://github.com/TeamEiva/Eiva-Userbot.git /root/Eivabot
 
 #working directory 
 WORKDIR /root/Eivabot
