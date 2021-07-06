@@ -2,7 +2,7 @@
 A simple Telegram userbot based on Telethon .
 [![Eivabot logo](https://telegra.ph/file/09260dc311afc06c22573.jpg)](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FTeamEiva%2FEivabot%2Ftree%2Fbugs&template=https%3A%2F%2Fgithub.com%2FTeamEiva%2FEivabot)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FTeamEiva%2FEivabot&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://github.com/TeamEiva/Eivabot)
-[![CodeFactor](https://www.codefactor.io/repository/github/TeamEiva/Eivabot/badge?&style=flat-square)](https://www.codefactor.io/repository/github/TeamEiva/Eivabot)
+
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green?&style=flat-square)](https://GitHub.com/TeamEiva/Eivabot/graphs/commit-activity) 
 ![Repo Size](https://img.shields.io/github/repo-size/TeamEiva/Eivabot?&style=flat-square&logo=github)
@@ -52,4 +52,4 @@ Thanks for using our bot
    - Special thanks to [LonamiWebs](https://github.com/LonamiWebs/Telethon/) for Telethon library.
    - To all devs of these [Userbots](https://github.com/TeamEiva/Eivabot/tree/bugs#inspiration)
    - Finally to all [contributors of Eivabot](https://github.com/TeamEiva/Eivabot/graphs/contributors)
-  [Hellbot](https://github.com/The-Hellbot/HellBot)
+   - [Hellbot](https://github.com/The-Hellbot/HellBot)
