@@ -11,7 +11,7 @@ A simple Telegram userbot based on Telethon .
 [![PR Open](https://img.shields.io/github/issues-pr/TeamEiva/Eivabot?&style=flat-square&logo=github)](https://github.com/TeamEiva/Eivabot/pulls)
 [![PR Closed](https://img.shields.io/github/issues-pr-closed/TeamEiva/Eivabot?&style=flat-square&logo=github)](https://github.com/TeamEiva/Eivabot/pulls?q=is:closed)
 [![GitHub contributors](https://img.shields.io/github/contributors/TeamEiva/Eivabot?&style=flat-square&logo=github)](https://GitHub.com/TeamEiva/Eivabot/graphs/contributors/)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/TeamEiva/Eivabot?&style=flat-square&logo=github)](https://github.com/TeamEiva/Eivabot/graphs/commit-activity)
+
 [![GitHub forks](https://img.shields.io/github/forks/TeamEiva/Eivabot?&style=flat-square&logo=github)](https://github.com/TeamEiva/Eivabot/fork)
 [![GitHub stars](https://img.shields.io/github/stars/TeamEiva/Eivabot?&style=flat-square&logo=github)](https://github.com/TeamEiva/Eivabot/stargazers)
 
