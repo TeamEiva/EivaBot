@@ -38,7 +38,7 @@ start_bot () {
     cd $EivaPATH
     echo "  • Starting EivaBot •  "
 
-    python3 ../setup/updater.py ../requirements.txt requirements.txt
+        python3 /root/Eivabot/setup/updater.py /root/Eivabot/requirements.txt requirements.txt
     python3 -m Eivabot
 }
 
