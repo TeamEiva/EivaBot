@@ -52,4 +52,4 @@ Thanks for using our bot
    - Special thanks to [LonamiWebs](https://github.com/LonamiWebs/Telethon/) for Telethon library.
    - To all devs of these [Userbots](https://github.com/TeamEiva/Eivabot/tree/bugs#inspiration)
    - Finally to all [contributors of Eivabot](https://github.com/TeamEiva/Eivabot/graphs/contributors)
-   - [Hellbot](https://github.com/The-Hellbot/HellBot)
+   - [Dari Cobra](https://github.com/DARK-COBRA/DARKCOBRA)
