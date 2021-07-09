@@ -77,7 +77,7 @@
       "description": "Create a private channel. And get it's id from @Eiva50_bot and paste here. Value should start with -100",
       "value": ""
     },
-    "EivaBOT_SESSION": {
+    "EIVABOT_SESSION": {
       "description": "Get this value by using repl or termux. Refer to Repo for more info.",
       "value": ""
     },
@@ -106,12 +106,12 @@
     },
     "YOUR_CHANNEL": {
       "description": "Fill your channel username(without @) to get this displayed on your Eiva Alive.",
-      "value": "",
+      "value": "TheEiva",
       "required": false
     },
     "YOUR_GROUP": {
       "description": "Fill your group username(without @) to get this displayed on your Eiva Alive.",
-      "value": "",
+      "value": "EivaSupport",
       "required": false
     },
     "SUDO_USERS": {
