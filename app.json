@@ -31,7 +31,7 @@
     },
     "ALIVE_PIC": {
       "description": "Paste the telegraph link of a video/gif/pic to show on Alive.",
-      "value": "",
+      "value": "https://telegra.ph/file/cca0cd6ee5e1939ebf1c9.jpg",
       "required": false
     },
     "ABUSE": {
@@ -41,7 +41,7 @@
     },
     "PMPERMIT_PIC": {
       "description": "Paste the Telegraph link to show in pm permit message.",
-      "value": "",
+      "value": "https://telegra.ph/file/cca0cd6ee5e1939ebf1c9.jpg",
       "required": false
     },
     "PM_LOG_ID": {
