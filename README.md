@@ -1,4 +1,4 @@
-# ΣIVΛ-ЦSΣΓBθƬ
+# 𝙀𝙄𝙑𝘼 𝙐𝙎𝙀𝙍𝘽𝙊𝙏
 A simple Telegram userbot based on Telethon .
 [![Eivabot logo](https://telegra.ph/file/09260dc311afc06c22573.jpg)](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FTeamEiva%2FEivabot%2Ftree%2Fbugs&template=https%3A%2F%2Fgithub.com%2FTeamEiva%2FEivabot)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FTeamEiva%2FEivabot&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://github.com/TeamEiva/Eivabot)
@@ -20,7 +20,7 @@ A simple Telegram userbot based on Telethon .
 ## How to deploy Eiva
 ### Heroku Deploy
 
-  - [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://github.com/TeamEiva/EivaBot)
+  - [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TeamEiva/Eivabot)
 
 
   
