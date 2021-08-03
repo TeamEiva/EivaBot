@@ -25,8 +25,8 @@ A simple Telegram userbot based on Telethon .
 
   
 ## Support
-   <a href="https://t.me/TheEiva"><img src="https://img.shields.io/badge/Channel%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
-   <a href="https://t.me/Eivasupport"><img src="https://img.shields.io/badge/Group%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
+   <a href="https://t.me/TheEiva"><img src="https://img.shields.io/badge/Channel%20Support%3F-Join-Red?&style=flat-square?&logo=telegram" width=220px></a></p>
+   <a href="https://t.me/Eivasupport"><img src="https://img.shields.io/badge/Group%20Support%3F-Join-green?&style=flat-square?&logo=telegram" width=220px></a></p>
    
 
 ## Disclaimer
