@@ -30,7 +30,7 @@ A simple Telegram userbot based on Telethon .
    <a href="https://t.me/Eivasupport"><img src="https://img.shields.io/badge/Group%20Support?%3F-Join-green&style=flat-square?&logo=telegram" width=220px></a></p>
    
 
-## Disclaimer
+## Disclaimer 
 
 ```
               YOU ARE FOREWARNED
