@@ -24,10 +24,10 @@
       "value": "ℰⅈᏉᗅ",
       "required": false
     },
-    "MONGO_DB_URL ": {
-      "description": "Mongo Db Url Get it from www.mongodb.com",
+    "MONGO_DB_URL": {
+      "description": "Mongo Db Url Get it from www.mongodb.com (optional)",
       "value": "",
-      "required": true
+      "required": false
     },
     "ALIVE_MSG": {
       "description": "Your Custom Alive Message to show on Alive.",
@@ -89,12 +89,12 @@
     "HEROKU_API_KEY": {
       "description": "Go to https://dashboard.heroku.com/account, scroll down and press Reveal API. Required for updater to work.",
       "value": "",
-      "required": true
+      "required": false
     },
     "HEROKU_APP_NAME": {
       "description": "The Value of App Name you filled in right on top. Required for updater to work.",
       "value": "",
-      "required": true
+      "required": false
     },
     "BOT_TOKEN": {
       "description": "Make a bot from @BotFather and paste the bot token here.",
@@ -125,25 +125,10 @@
       "required": false
     }
   },
-  "addons": [{
-    "plan": "heroku-postgresql",
-    "options": {
-      "version": "12"
-    }
-  }],
-  "buildpacks": [{
-    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-  },{
-    "url":"https://github.com/heroku/heroku-buildpack-google-chrome"
-  },{
-    "url":"https://github.com/heroku/heroku-buildpack-chromedriver"
-  },{
-    "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
-  },{
-    "url": "https://github.com/heroku/heroku-buildpack-apt.git"
-  },{
-    "url": "https://github.com/chrismytton/heroku-buildpack-jq"
-  },{
-    "url": "heroku/python"
-  }]
+  "addons": [],
+  "buildpacks": [
+    { "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest" },
+    { "url": "https://github.com/heroku/heroku-buildpack-apt" },
+    { "url": "heroku/python" }
+  ]
 }
