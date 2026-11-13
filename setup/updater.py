@@ -1,29 +1,36 @@
+#!/usr/bin/env python3
+"""Install only the requirements that changed between an old and a new
+requirements file. Used by the Eivabot launcher during updates.
+
+Usage: python setup/updater.py <old_requirements> <new_requirements>
+"""
 import asyncio
 import difflib
 import shlex
-from typing import Tuple
 import sys
+from typing import List, Tuple
 
-# if any requirements are cahnged then install that requirement
-async def lines_differnce(file1, file2):
-    with open(file1) as f1:
-        lines1 = f1.readlines()
-        lines1 = [line.rstrip("\n") for line in lines1]
-    with open(file2) as f2:
-        lines2 = f2.readlines()
-        lines2 = [line.rstrip("\n") for line in lines2]
+
+def read_lines(path: str) -> List[str]:
+    with open(path, encoding="utf-8") as fh:
+        return [line.rstrip("\n") for line in fh]
+
+
+def lines_difference(file1: str, file2: str) -> Tuple[List[str], List[str]]:
+    lines1 = read_lines(file1)
+    lines2 = read_lines(file2)
     diff = difflib.unified_diff(
         lines1, lines2, fromfile=file1, tofile=file2, lineterm="", n=0
     )
     lines = list(diff)[2:]
-    added = [line[1:] for line in lines if line[0] == "+"]
-    removed = [line[1:] for line in lines if line[0] == "-"]
+    added = [line[1:] for line in lines if line.startswith("+")]
+    removed = [line[1:] for line in lines if line.startswith("-")]
     additions = [i for i in added if i not in removed]
-    removedt = [i for i in removed if i not in added]
-    return additions, removedt
+    removals = [i for i in removed if i not in added]
+    return additions, removals
 
 
-async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
+async def runcmd(cmd: str) -> Tuple[str, str, int]:
     args = shlex.split(cmd)
     process = await asyncio.create_subprocess_exec(
         *args, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
@@ -33,20 +40,32 @@ async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
         stdout.decode("utf-8", "replace").strip(),
         stderr.decode("utf-8", "replace").strip(),
         process.returncode,
-        process.pid,
     )
 
 
-async def update_requirements(main , test):
-    a, r = await lines_differnce(main, test)
-    try:
-        for i in a:
-            await runcmd(f"pip install {i}")
-            print(f"Succesfully installed {i}")
-    except Exception as e:
-        print(f"Error while installing requirments {str(e)}")
+async def update_requirements(old: str, new: str) -> None:
+    additions, _removals = await lines_difference(old, new)
+    if not additions:
+        print("No new requirements to install.")
+        return
+    for req in additions:
+        if not req or req.startswith("#"):
+            continue
+        stdout, stderr, code = await runcmd(
+            f"{sys.executable} -m pip install --upgrade {shlex.quote(req)}"
+        )
+        if code == 0:
+            print(f"Successfully installed {req}")
+        else:
+            print(f"Failed to install {req}: {stderr or stdout}")
 
 
-loop = asyncio.get_event_loop()
-loop.run_until_complete(update_requirements(sys.argv[1] , sys.argv[2]))
-loop.close()
+def main() -> None:
+    if len(sys.argv) != 3:
+        print("usage: python updater.py <old_requirements> <new_requirements>")
+        raise SystemExit(1)
+    asyncio.run(update_requirements(sys.argv[1], sys.argv[2]))
+
+
+if __name__ == "__main__":
+    main()

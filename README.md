@@ -1,57 +1,154 @@
-# 𝙀𝙄𝙑𝘼 𝙐𝙎𝙀𝙍𝘽𝙊𝙏
-A simple Telegram userbot based on Telethon .
-[![Eivabot logo](https://telegra.ph/file/09260dc311afc06c22573.jpg)](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FTeamEiva%2FEivabot%2Ftree%2Fbugs&template=https%3A%2F%2Fgithub.com%2FTeamEiva%2FEivabot)
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FTeamEiva%2FEivabot&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://github.com/TeamEiva/Eivabot)
+"""EivaBot — a simple Telegram userbot based on Telethon."""
 
-[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green?&style=flat-square)](https://GitHub.com/TeamEiva/Eivabot/graphs/commit-activity) 
-![Repo Size](https://img.shields.io/github/repo-size/TeamEiva/Eivabot?&style=flat-square&logo=github)
-[![GitHub license](https://img.shields.io/github/license/TeamEiva/Eivabot?&style=flat-square&logo=github)](https://github.com/TeamEiva/Eivabot/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/TeamEiva/Eivabot?&style=flat-square&logo=github)](https://github.com/TeamEiva/Eivabot/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/TeamEiva/Eivabot?&style=flat-square&logo=github)](https://github.com/TeamEiva/Eivabot/issues)
-[![PR Open](https://img.shields.io/github/issues-pr/TeamEiva/Eivabot?&style=flat-square&logo=github)](https://github.com/TeamEiva/Eivabot/pulls)
-[![PR Closed](https://img.shields.io/github/issues-pr-closed/TeamEiva/Eivabot?&style=flat-square&logo=github)](https://github.com/TeamEiva/Eivabot/pulls?q=is:closed)
-[![GitHub contributors](https://img.shields.io/github/contributors/TeamEiva/Eivabot?&style=flat-square&logo=github)](https://GitHub.com/TeamEiva/Eivabot/graphs/contributors/)
 
-[![GitHub forks](https://img.shields.io/github/forks/TeamEiva/Eivabot?&style=flat-square&logo=github)](https://github.com/TeamEiva/Eivabot/fork)
-[![GitHub stars](https://img.shields.io/github/stars/TeamEiva/Eivabot?&style=flat-square&logo=github)](https://github.com/TeamEiva/Eivabot/stargazers)
+## What is EivaBot?
 
+EivaBot is a modular Telegram **userbot** (runs on your own user account via a
+Telethon `StringSession`) built for fun commands and easier group management.
 
+## Requirements
 
-## How to deploy Eiva
-### Heroku Deploy
+* Python **3.9 – 3.12** (3.11 recommended)
+* A Telegram account and [API credentials](https://my.telegram.org) (`APP_ID`, `API_HASH`)
+* A generated session string (see below)
 
-  - [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TeamEiva/Eivabot)
+## Local installation
 
-### Railway Deploy
-  - [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2FTeamEiva%2FRailway-Deploy&plugins=postgresql%2Cmongodb&envs=MONGO_DB_URL%2CALIVE_MSG%2CYOUR_NAME%2CENV%2CABUSE%2CPM_LOG_ID%2CPMPERMIT_PIC%2CHANDLER%2CEMOJI_IN_HELP%2CBUTTONS_IN_HELP%2CPM_PERMIT%2CAPP_ID%2CAPI_HASH%2CLOGGER_ID%2CEivaBOT_SESSION%2CTAG_LOGGER%2CBOT_USERNAME%2CYOUR_CHANNEL%2CYOUR_GROUP%2CSUDO_USERS&optionalEnvs=ALIVE_MSG&MONGO_DB_URLDesc=Mongodb.com+Get+from+here&ALIVE_MSGDesc=Enter+Anything+or+leave&ENVDesc=Dont+Touch+it&ABUSEDesc=Choose+ON+or+OFF&PM_LOG_IDDesc=Fill+your+private+Channel+ID+if+you+want+to+Log+PM+messages.+Get+channel+id+from+%40Eiva50_bot&PMPERMIT_PICDesc=Paste+the+Telegraph+link+to+show+in+pm+permit+message.&HANDLERDesc=Your+command+handler.+Default+is+%27+.+%27+%28dot%29.&EMOJI_IN_HELPDesc=A+emoji+to+display+in+help+command&BUTTONS_IN_HELPDesc=No.of+buttons+to+display+in+help+menu.&PM_PERMITDesc=Fill+DISABLE+to+turn+off+pm+permit.&APP_IDDesc=Get+this+value+from+my.telegram.org&API_HASHDesc=Get+this+value+from+my.telegram.org&LOGGER_IDDesc=Create+a+private+channel.+And+get+it%27s+id+from+%40Eiva50_bot+and+paste+here.+Value+should+start+with+-100&EivaBOT_SESSIONDesc=Get+this+value+by+using+repl+or+termux.+Refer+to+Repo+for+more+info.&TAG_LOGGERDesc=Make+a+group+and+add+rose.+Do+%2Fid+and+paste+the+chat+id+here.&BOT_USERNAMEDesc=Make+a+bot+from+%40BotFather+and+paste+the+username+here&YOUR_CHANNELDesc=Fill+your+channel+username%28without+%40%29+to+get+this+displayed+on+your+Eiva+Alive.&YOUR_GROUPDesc=Fill+your+group+username%28without+%40%29+to+get+this+displayed+on+your+Eiva+Alive.&SUDO_USERSDesc=Userid+of+user+to+grant+sudo+access.+Add+multiple+sudo+users+by+giving+a+space+between+userids&ENVDefault=ANYTHING&ABUSEDefault=ON&PMPERMIT_PICDefault=https%3A%2F%2Ftelegra.ph%2Ffile%2Fcca0cd6ee5e1939ebf1c9.jpg&BUTTONS_IN_HELPDefault=5&PM_PERMITDefault=ENABLE&YOUR_CHANNELDefault=TheEiva&YOUR_GROUPDefault=EivaSupport)
-  
-## Support
-   <a href="https://t.me/TheEiva"><img src="https://img.shields.io/badge/Channel%20Support%3F-Join-Red?&style=flat-square?&logo=telegram" width=220px></a></p>
-   <a href="https://t.me/Eivasupport"><img src="https://img.shields.io/badge/Group%20Support?%3F-Join-green&style=flat-square?&logo=telegram" width=220px></a></p>
-   
+```bash
+git clone https://github.com/TeamEiva/Eivabot.git
+cd Eivabot
 
-## Disclaimer 
+python -m venv .venv
+# Windows PowerShell:
+. .venv\Scripts\Activate.ps1
+# Linux/macOS:
+# source .venv/bin/activate
 
+pip install -r requirements.txt
 ```
-              YOU ARE FOREWARNED
-Your Telegram account may get banned.   
-Eivabot or we are not responsible for your account, 
-This bot is intended for the purpose of having fun with some fun commands 
-and group management with some helpfull commands.
 
-If  you ended up spamming groups, getting reported left and right, 
-and you ended up in being fight with Telegram 
-and at the end Telegram Team deleted your account. DON'T BLAME US.
+### 1. Get your Telegram API credentials
 
-No personal support will be provided / We won't spoon feed you. 
-If you need help ask in our support group 
-and we or our friends will try to help you.
+1. Visit <https://my.telegram.org>, log in, open **API Development Tools**
+2. Create an application and note the `APP_ID` (integer) and `API_HASH`.
 
-Thanks for using our bot 
+### 2. Generate your session string
+
+```bash
+python stringsetup.py
 ```
+
+Enter your `APP_ID` / `API_HASH`, log in with the OTP code Telegram sends you,
+and the session string will be printed **and** sent to your Telegram *Saved
+Messages*. Treat this string like a password — anyone holding it can control
+your account.
+
+### 3. Configure environment variables
+
+```bash
+cp .env.example .env   # then edit .env with your real values
+```
+
+| Variable | Required | Description |
+|---|---|---|
+| `APP_ID` | ✅ | from my.telegram.org |
+| `API_HASH` | ✅ | from my.telegram.org |
+| `EivaBOT_SESSION` | ✅ | Telethon StringSession from step 2 |
+| `LOGGER_ID` | – | private log channel id (starts with `-100`) |
+| `BOT_TOKEN` / `BOT_USERNAME` | – | helper bot from @BotFather |
+| `HANDLER` | – | command prefix (default `.`) |
+| `PM_PERMIT` | – | `ENABLE` / `DISABLE` |
+| `SUDO_USERS` | – | space-separated user ids with extra access |
+| `HEROKU_API_KEY` / `HEROKU_APP_NAME` | – | needed only for the Heroku updater |
+
+### 4. Run
+
+```bash
+python -m Eivabot
+```
+
+Note: the full plugin suite lives in
+[TeamEiva/Eiva-Userbot](https://github.com/TeamEiva/Eiva-Userbot). On Heroku /
+Docker the `Eivabot` launcher script downloads that package automatically and
+runs `python3 -m Eivabot` from inside it, unlocking all plugins. Running from
+this checkout directly starts the core bot (client + config validation) without
+the optional plugins.
+
+## Deploy to Heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TeamEiva/EivaBot)
+
+Or with `heroku.yml` (container stack): push the repo and set the stack to
+`container`:
+
+```bash
+heroku stack:set container -a <app-name>
+git push heroku main
+```
+
+Set the environment variables listed above on the Heroku app (`heroku config:set ...`).
+
+## Deploy with Docker
+
+```bash
+docker build -t eivabot .
+docker run -d --name eivabot \
+  -e APP_ID=12345 \
+  -e API_HASH=... \
+  -e EivaBOT_SESSION=... \
+  eivabot
+```
+
+## Deploy to Railway
+
+Fork this repository, then in [Railway](https://railway.app) create a new
+project → *Deploy from GitHub repo*. Set the same environment variables in the
+Railway dashboard (Railway auto-detects the `Procfile`/`Dockerfile`). Railway's
+modern runtime supports Python 3.11 natively; no template repo is required
+anymore.
+
+## Troubleshooting
+
+| Symptom | Fix |
+|---|---|
+| `Missing required environment variables: ...` | one or more of `APP_ID`, `API_HASH`, `EivaBOT_SESSION` is unset — copy `.env.example` to `.env` and fill it in |
+| `APP_ID must be an integer` | copy the numeric App ID from my.telegram.org, not the App title |
+| `AuthKeyDuplicatedError` on start | the session string was regenerated/used elsewhere — generate a fresh one with `stringsetup.py` |
+| `HTTP 401 / AUTH_KEY_UNREGISTERED` | the session was revoked (logout or password change) — regenerate |
+| pip build failures on old Python | use Python ≥ 3.9 (3.11 recommended) |
+| `FloodWait` errors | you are hitting rate limits — wait the reported number of seconds; do not loop-send messages |
+
+## Security recommendations
+
+* **Never** commit `.env`, session strings, or `*.session` files (both are in `.gitignore`).
+* Use a dedicated Telegram account for the userbot if possible.
+* Regenerate the session string immediately if it leaks — it grants full account access.
+* Keep dependencies updated; run `pip list --outdated` occasionally.
+
+## Breaking changes in this modernized version
+
+* Python **3.11** is now the target runtime (`runtime.txt` updated; 3.9.2 removed).
+* `requirements.txt` was rewritten with pinned, installable versions. Dozens of
+  unmaintained/dead packages (e.g. `cfscrape`, `coffeehouse`, `opencv-python--headless`
+  (typo'd spec), `googletrans==4.0.0-rc1`, `sqlalchemy==1.3.23`) were removed
+  because they no longer install on modern Python or their plugins no longer load.
+* Deploy buttons now reflect the main branch; Railway deploys from a fork directly.
+* The launcher (`Eivabot`) now installs full requirements instead of a diff-only
+  update, uses `set -euo pipefail`, and `exec`s the bot for proper signal handling.
+* `app.json` no longer requires a Mongo addon / Heroku API key to deploy.
+
+## Disclaimer
+
+You are forewarned: your Telegram account may get banned. EivaBot and its
+maintainers are not responsible for your account. This bot is intended for fun
+commands and helpful group management — do not spam.
 
 ## Credits
-   - Special thanks to [LonamiWebs](https://github.com/LonamiWebs/Telethon/) for Telethon library.
-   - To all devs of these [Userbots](https://github.com/TeamEiva/Eivabot/tree/bugs#inspiration)
-   - Finally to all [contributors of Eivabot](https://github.com/TeamEiva/Eivabot/graphs/contributors)
-   - [Dark Cobra](https://github.com/DARK-COBRA/DARKCOBRA)
+
+* [LonamiWebs/Telethon](https://github.com/LonamiWebs/Telethon)
+* All [contributors of Eivabot](https://github.com/TeamEiva/Eivabot/graphs/contributors)
+* [Dark Cobra](https://github.com/DARK-COBRA/DARKCOBRA)
+
+Licensed under the GNU GPL-3.0 (see [LICENSE](LICENSE)).

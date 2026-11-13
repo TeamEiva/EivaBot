@@ -1,0 +1,21 @@
+# Secrets & sessions — never commit these
+.env
+*.session
+*.session-journal
+**/*.session
+myEiva*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+
+# Tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
