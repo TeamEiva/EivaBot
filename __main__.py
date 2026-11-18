@@ -21,7 +21,10 @@ log = logging.getLogger("Eivabot")
 
 
 def _build_client():
-    from .config import Config
+    try:
+        from .config import Config  # package-mode import (python -m Eivabot)
+    except ImportError:  # run as a plain script: python __main__.py
+        from config import Config
     from telethon import TelegramClient
     from telethon.sessions import StringSession
 
